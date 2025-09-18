@@ -9,18 +9,19 @@ export default function App() {
         <View style={styles.imageContainer}>
           <Image 
           style={styles.image}
-          source={require("./assets/images/Snowboarding-Ski.jpg")}/>
+          source={require("./assets/images/MyPic.jpg")}/>
         </View>
         <View style={styles.textContainer}>
-          <Text style={styles.name}>Salty Pro Shop, Inc.</Text>
-          <Text style={styles.text} onPress={() => {Linking.openURL("https://saltyproshop.com/");}}>saltyproshop.com</Text>
-          <Text style={styles.text} onPress={() => {Linking.openURL("tel:8435164818");}}>843-516-4818</Text>
-          <Text style={styles.text} onPress={() => {Linking.openURL("https://maps.app.goo.gl/2wa2ydYGiqDt5J8PA");}}>Open in Google Maps</Text>
+          <Text style={styles.name}>Alex Montgomery</Text>
+          <Text style={styles.text} onPress={() => {Linking.openURL("mailto:acmontgo1@coastal.edu"); }}>acmontgo1@coastal.edu</Text>
+          <Text style={styles.text} onPress={() => {Linking.openURL("tel:8038041951");}}>803-804-1951</Text>
+          <Text style={styles.text} onPress={() => {Linking.openURL("https://github.com/almonext/CSCI343/tree/main");}}>github</Text>
         </View>
       </SafeAreaView>
     </>
   );
 }
+
 
 const styles = StyleSheet.create({
   root: {
