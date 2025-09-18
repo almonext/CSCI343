@@ -9,7 +9,7 @@ export default function App() {
         <View style={styles.imageContainer}>
           <Image 
           style={styles.image}
-          source={require("./assets/images/MyPic.jpg")}/>
+          source={require("./assets/images/MyPic.jpeg")}/>
         </View>
         <View style={styles.textContainer}>
           <Text style={styles.name}>Alex Montgomery</Text>
