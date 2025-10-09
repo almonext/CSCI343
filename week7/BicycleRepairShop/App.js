@@ -102,7 +102,18 @@ function setRentalMembershipHandler() {
 
 function HomeScreenHandler(){
   setCurrentPrice(0);
+<<<<<<< HEAD
   setCurrentScreen("");
+=======
+  setRepairTimeId(0);
+  setServices((prevServices) =>
+    prevServices.map((service) =>
+      true ? { ...service, value: false }: service));
+  setNewsletter(false);
+  setRentalMembership(false);
+  setCurrentScreen("");
+  
+>>>>>>> bf287a4 (Work on week 7 and update 5 & 6)
 }
 
 function orderReviewHandler(){
@@ -113,11 +124,17 @@ function orderReviewHandler(){
     }
   }
 
+<<<<<<< HEAD
   if (newsletter){
     price = price + 1.25
   }
   if (rentalMembership){
     price = price + 1.25
+=======
+  
+  if (rentalMembership){
+    price = price + 100
+>>>>>>> bf287a4 (Work on week 7 and update 5 & 6)
   }
   price = price + repairTimeRadioButtons[repairTimeId].price;
 
@@ -179,5 +196,9 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.accent500,
     alignItems: 'center',
     justifyContent: 'center',
+<<<<<<< HEAD
+=======
+    width: "100%"
+>>>>>>> bf287a4 (Work on week 7 and update 5 & 6)
   },
 });
