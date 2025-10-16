@@ -1,9 +1,12 @@
-import { Text, StyleSheet } from "react-native";
+import { Text, StyleSheet, useWindowDimensions } from "react-native";
 
 import Colors from "../constants/colors";
 
 function Title(props) {
-    return <Text style={styles.title}>{props.children}</Text>;
+    const { width, height } = useWindowDimensions();
+    return (
+    <Text style={[styles.title, {fontSize: width * 0.13}]}>{props.children}</Text>
+    );
 }
 
 export default Title;
@@ -14,5 +17,5 @@ const styles = StyleSheet.create({
         color: Colors.primary500,
         textAlign: "center",
         fontFamily: "Camp"
-    }
+    },
 });

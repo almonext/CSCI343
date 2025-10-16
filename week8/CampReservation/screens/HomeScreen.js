@@ -1,7 +1,8 @@
-import { ImageBackground, Modal, Pressable, StyleSheet, View, Platform, Button, Text } from "react-native";
+import { ImageBackground, Modal, Pressable, StyleSheet, View, Platform, Button, Text, useWindowDimensions, ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import { useState } from "react";
+import WheelPicker from "react-native-wheely";
 
 import Title from "../components/Title";
 import NavButton from "../components/NavButton";
@@ -56,7 +57,7 @@ export default function HomeScreen(){
     }
 
     //Guest Count State and Functions
-    const guestCounts = [1,2,3,4,5,6,7,8];
+    const guestCounts = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
     const [numGuests, setNumGuests] = useState(0);
     const [showNumGuests, setShowNumGuests] = useState(false);
   
@@ -66,26 +67,50 @@ export default function HomeScreen(){
     }
 
     function hideNumGuestsPicker(){
-        setShowCheckOut(false);
+        setShowNumGuests(false);
     }
      function onChangeNumGuests(index){
         setNumGuests(index);
     }
  //Bed Count State and Functions
- const bedCounts = [1, 2, 3, 4];
+ const bedCounts = [1, 2, 3, 4, 5];
  const [numBeds, setNumBeds] = useState(0);
  const [showNumBeds, setShowNumBeds] = useState(false);
 
     function showNumBedsPicker(){
-        setShowNumGuests(true);
+        setShowNumBeds(true);
     }
 
     function hideNumBedsPicker(){
-        setShowCheckOut(false);
+        setShowNumBeds(false);
     }
      function onChangeNumBeds(index){
-        setNumGuests(index);
+        setNumBeds(index);
     }
+
+    //Results State and Functions
+    const [results, setResults] = useState("");
+
+    function onReserveHandler(){
+        let res = `Check In:\t\t${checkIn.toDateString()}\n`;
+        res = res + `Check Out:\t\t${checkOut.toDateString()}\n`;
+        res = res + `Number of Guests:\t\t${guestCounts[numGuests]}\n`;
+        res = res + `Check of Beds:\t\t${bedCounts[numBeds]}\n`;
+        setResults(res);
+    }
+
+
+    const { width, height } = useWindowDimensions();
+
+    const dateLabelFlex = {
+        fontSize: width * 0.1
+    };
+
+    const dateTextFlex = {
+        fontSize: width * 0.05,
+    };
+
+
 
     return (
         <ImageBackground
@@ -106,128 +131,208 @@ export default function HomeScreen(){
                     },
                 ]}
             >
-                <View style={styles.titleContainer}>
-                    <Title>Mountain Retreat</Title>
-                </View>
+                <ScrollView style={styles.scrollContainer}>
 
-                <View style={styles.rowContainer}>
-                    <View style={styles.dateContainer}>
-                        <Text style={styles.dateLabel}>Check In:</Text>
-                        <Pressable onPress={showCheckInPicker}>
-                            <Text style={styles.dateText}>{checkIn.toDateString()}</Text>
-                        </Pressable>
+                <View style={styles.scrollMainContainer}>                    
+                    <View style={styles.titleContainer}>
+                        <Title>Mountain Retreat</Title>
                     </View>
 
-                    <View style={styles.dateContainer}>
-                        <Text style={styles.dateLabel}>Check Out:</Text>
-                        <Pressable onPress={showCheckOutPicker}>
-                            <Text style={styles.dateText}>{checkOut.toDateString()}</Text>
-                        </Pressable>
-                    </View>
-                </View>
-
-                <View>
-                    {showCheckIn && Platform.OS === "android" && (
-                        <DateTimePicker 
-                            testID="dateTimePicker1"
-                            value={checkIn}
-                            mode={"date"}
-                            display="spinner"
-                            onChange={onChangeCheckIn}
-                            />
-                    )}
-
-                    {showCheckIn && Platform.OS === "ios" && (
-                        <Modal
-                        animationType="slide"
-                        transparent={true}
-                        supportedOrientations={["portrait", "landscape"]}
-                        >
-                            <View style={styles.centerModalView}>
-                                <View style={styles.modalView}>
-                                    <DateTimePicker 
-                                        testID="dateTimePicker2"
-                                        value={checkIn}
-                                        mode={"date"}
-                                        display="spinner"
-                                        onChange={onChangeCheckIn}
-                                        />
-
-                                        <Button title="Confirm" onPress={hideCheckInPicker} />
-                                </View>
-                            </View>
-                        </Modal>
-                    )}
-                    
-                    {showCheckOut && Platform.OS === "android" && (
-                        <DateTimePicker 
-                            testID="dateTimePicker3"
-                            value={checkOut}
-                            mode={"date"}
-                            display="spinner"
-                            onChange={onChangeCheckOut}
-                            />
-                    )}
-
-                    {showCheckIn && Platform.OS === "ios" && (
-                        <Modal
-                        animationType="slide"
-                        transparent={true}
-                        supportedOrientations={["portrait", "landscape"]}
-                        >
-                            <View style={styles.centerModalView}>
-                                <View style={styles.modalView}>
-                                    <DateTimePicker 
-                                        testID="dateTimePicker4"
-                                        value={checkIn}
-                                        mode={"date"}
-                                        display="spinner"
-                                        onChange={onChangeCheckOut}
-                                        />
-
-                                    <Button title="Confirm" onPress={hideCheckOutPicker} />
-                                </View>
-                            </View>
-                        </Modal>
-                    )}
-                </View>
-
-                <View style={styles.rowContainer}>
-                    <Text style={styles.dateLabel}>
-                        Number of Guests:
-                    </Text>
-                    <Pressable onPress={showNumGuestsPicker}>
-                        <View style={styles.dateTextContainer}>
-                            <Text style={styles.dateText}>{guestCounts[numGuests]}</Text>
+                    <View style={styles.rowContainer}>
+                        <View style={styles.dateContainer}>
+                            <Text style={[styles.dateLabel, dateLabelFlex]}>Check In:</Text>
+                            <Pressable onPress={showCheckInPicker}>
+                                <Text style={[styles.dateText, dateTextFlex ]}>{checkIn.toDateString()}</Text>
+                            </Pressable>
                         </View>
-                    </Pressable>
+
+                        <View style={styles.dateContainer}>
+                            <Text style={[styles.dateLabel, dateLabelFlex]}>Check Out:</Text>
+                            <Pressable onPress={showCheckOutPicker}>
+                                <Text style={[styles.dateText, dateTextFlex]}>{checkOut.toDateString()}</Text>
+                            </Pressable>
+                        </View>
+                    </View>
+
+                    <View>
+                        {showCheckIn && Platform.OS === "android" && (
+                            <DateTimePicker 
+                                testID="dateTimePicker1"
+                                value={checkIn}
+                                mode={"date"}
+                                display="spinner"
+                                onChange={onChangeCheckIn}
+                                />
+                        )}
+
+                        {showCheckIn && Platform.OS === "ios" && (
+                            <Modal
+                            animationType="slide"
+                            transparent={true}
+                            supportedOrientations={["portrait", "landscape"]}
+                            >
+                                <View style={styles.centerModalView}>
+                                    <View style={styles.modalView}>
+                                        <DateTimePicker 
+                                            testID="dateTimePicker2"
+                                            value={checkIn}
+                                            mode={"date"}
+                                            display="spinner"
+                                            onChange={onChangeCheckIn}
+                                            />
+
+                                            <Button title="Confirm" onPress={hideCheckInPicker} />
+                                    </View>
+                                </View>
+                            </Modal>
+                        )}
+                        
+                        {showCheckOut && Platform.OS === "android" && (
+                            <DateTimePicker 
+                                testID="dateTimePicker3"
+                                value={checkOut}
+                                mode={"date"}
+                                display="spinner"
+                                onChange={onChangeCheckOut}
+                                />
+                        )}
+
+                        {showCheckIn && Platform.OS === "ios" && (
+                            <Modal
+                            animationType="slide"
+                            transparent={true}
+                            supportedOrientations={["portrait", "landscape"]}
+                            >
+                                <View style={styles.centerModalView}>
+                                    <View style={styles.modalView}>
+                                        <DateTimePicker 
+                                            testID="dateTimePicker4"
+                                            value={checkIn}
+                                            mode={"date"}
+                                            display="spinner"
+                                            onChange={onChangeCheckOut}
+                                            />
+
+                                        <Button title="Confirm" onPress={hideCheckOutPicker} />
+                                    </View>
+                                </View>
+                            </Modal>
+                        )}
+                    </View>
+
+                    
+                    <View style={styles.rowContainer}>
+                        <Text style={[styles.dateLabel, dateLabelFlex]}>
+                            Number of Guests:
+                        </Text>
+                        <Pressable onPress={showNumGuestsPicker}>
+                            <View style={styles.dateTextContainer}>
+                                <Text style={[styles.dateText, dateTextFlex]}>{guestCounts[numGuests]}</Text>
+                            </View>
+                        </Pressable>
+
+                        <Modal
+                        animationType="slide"
+                        transparent={true}
+                        visible={showNumGuests}
+                        supportedOrientations={["portrait", "landscape"]}
+                        >
+                            <View style={styles.centeredModalView}>
+                                <View style={styles.modalView}>
+                                    <Text style={[styles.dateLabel, dateLabelFlex]}>
+                                        Enter Number of Guests:
+                                    </Text>
+                                    <WheelPicker 
+                                    selectedIndex={numGuests}
+                                    options={guestCounts}
+                                    onChange={onChangeNumGuests}
+                                    containerStyle={{ width: 200 }}
+                                    />
+                                    <Button title="Confirm" onPress={hideNumGuestsPicker} />
+                                </View>
+                            </View>
+                        </Modal>
+                    </View>
+                    <View style={styles.rowContainer}>
+                        <Text style={[styles.dateLabel, dateLabelFlex]}>
+                            Number of campsites:
+                        </Text>
+                        <Pressable onPress={showNumBedsPicker}>
+                            <View style={styles.dateTextContainer}>
+                                <Text style={[styles.dateText, dateTextFlex]}>{bedCounts[numBeds]}</Text>
+                            </View>
+                        </Pressable>
+
+                        <Modal
+                        animationType="slide"
+                        transparent={true}
+                        visible={showNumBeds}
+                        supportedOrientations={["portrait", "landscape"]}
+                        >
+                            <View style={styles.centeredModalView}>
+                                <View style={styles.modalView}>
+                                    <Text style={[styles.dateLabel, dateLabelFlex]}>
+                                        Enter Number of campsites:
+                                    </Text>
+                                    <WheelPicker 
+                                    selectedIndex={numBeds}
+                                    options={bedCounts}
+                                    onChange={onChangeNumBeds}
+                                    containerStyle={{ width: 200 }}
+                                    />
+                                    <Button title="Confirm" onPress={hideNumBedsPicker} />
+                                </View>
+                            </View>
+                        </Modal>
+                    </View>
+
+                    <View style={styles.buttonContainer}>
+                        <NavButton onPress={onReserveHandler}>Reserve Now</NavButton>
+                    </View>
+
+                    <View style={styles.resultsContainer}>
+                        <Text style={[styles.results, dateLabelFlex]}>{results}</Text>
+                    </View>
                 </View>
-            </View>
-        </ImageBackground>
+            </ScrollView>
+        </View>
+    </ImageBackground>
 
         
-    )
+    );
 }
 
 const styles = StyleSheet.create({
     rootContainer: {
         flex: 1,
-        alignItems: "center"
+        alignItems: "center",
     },
     backgroundImage: {
         opacity: 0.3
     },
     titleContainer: {
         padding: 7,
-        marginVertical: 30,
-        marginHorizontal: 30,
+        marginVertical: 20,
+        marginHorizontal: 20,
         borderWidth: 2,
         borderRadius: 5,
         borderColor: Colors.primary500,
         backgroundColor: Colors.primary300,
-        width: 400
+        width: 5000,
+        maxWidth:"90%",
+        justifyContent: "center",
+        
     },
     scrollContainer: {
+        flex: 1,
+        width: 3000,
+        maxWidth: "100%",
+       
+
+    },
+    scrollMainContainer: {
+        justifyContent: "center",
+        alignItems: "center"
 
     },
     rowContainer: {
@@ -239,7 +344,8 @@ const styles = StyleSheet.create({
     },
     dateContainer: {
         backgroundColor: Colors.primary300o5,
-        padding: 10
+        padding: 10,
+        marginHorizontal: 10
     },
     dateLabel: {
         color: Colors.primary500,
@@ -251,7 +357,8 @@ const styles = StyleSheet.create({
     dateTextContainer: {
         backgroundColor: Colors.primary300o5,
         padding: 10,
-        paddingHorizontal: 30
+        paddingHorizontal: 30,
+        marginHorizontal: 10
     },
     dateText: {
         color: Colors.primary800,
@@ -275,5 +382,17 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 4,
         elevation: 5
+    },
+    buttonContainer: {
+        alignItems: "center",
+    },
+    resultsContainer: {},
+    results: {
+        textAlign: "center",
+        color: Colors.primary500,
+        fontFamily: "Camp",
+        textShadowColor: "black",
+        textShadowOffset: { width: 2, height: 2},
+        textShadowRadius: 2
     }
 });
