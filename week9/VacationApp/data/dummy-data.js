@@ -31,79 +31,79 @@ export const CAMPGROUNDS = [
     410,
     1793,
     4.0,
-    "https://lh3.googleusercontent.com/p/AF1QipPLHt4CcPQzydK8GZk45cp6F4OCLSrVPbEXj-7e=s1360-w1360-h1020"
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS65MEXn18Q4FZLLmWipREx1n5lTja4nC3_KA&s"
   ),
   new Campground(
     "c3",
     "s3",
-    "Stone Mountain Park Campground",
-    40,
-    1978,
+    "London",
+    678,
+    47,
     4.2,
-    "https://lh3.googleusercontent.com/p/AF1QipN4BCdka5-ZGpE6lhQoGvQyuyvrDYDYRTR9mDZ9=s1360-w1360-h1020"
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUmSH3K1JaCNLBBYlIzWLGK9xIVDK2cMchmg&s"
   ),
   new Campground(
     "c4",
     "s4",
-    "Kentucky Horse Park Campground",
-    60,
-    2001,
+    "Paris",
+    708,
+    50,
     4.7,
-    "https://lh3.googleusercontent.com/p/AF1QipOBnp2waOt2jqzmSeGuNr6yw6nDAdfbB_JgTS67=s1360-w1360-h1020"
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXj_sr5heVsM5m2F9ADB_47cE6evdwKMz2_w&s"
   ),
   new Campground(
     "c5",
     "s5",
-    "Hidden Oaks Campground",
-    25,
-    1988,
+    "Madrid",
+    488,
+    886,
     3.8,
-    "https://lh3.googleusercontent.com/p/AF1QipMKwVkZ66ndyrSL8HNshOPfuFIh6PC8-2OhUJaa=s1360-w1360-h1020"
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJtj1Fk2idZ7gWbttyJ-KdElokpMhCXbAEAw&s"
   ),
   new Campground(
     "c6",
     "s6",
-    "Little Black Creek Campground",
-    35,
-    1995,
+    "milan",
+    579,
+    600,
     4.1,
-    "https://lh3.googleusercontent.com/p/AF1QipMLVH4hUp3VXYReamqUsz1Ljonh76eIal4I4yZZ=s1360-w1360-h1020"
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQEunR_me3OtoN3ktV9VzjXJ7NFa-MRa3szQ&s"
   ),
   new Campground(
     "c7",
     "s7",
-    "Camp Hatteras RV Resort & Campground",
-    45,
-    1975,
+    "Lisbon",
+    504,
+    1147,
     4.3,
-    "https://lh3.googleusercontent.com/p/AF1QipPl_SZNGGy5UrPSTdFEklkVUMi8YF5d3WtBKgsu=s1360-w1360-h1020"
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQW8KP91cF6ruxKu5eWl_RZeT7To24xJxkZhA&s"
   ),
   new Campground(
     "c8",
     "s8",
-    "Table Rock State Park",
-    55,
-    2003,
+    "Berlin",
+    608,
+    1237,
     4.6,
-    "https://lh3.googleusercontent.com/p/AF1QipNiyUDf100wuxMTsu3OEvAbJ188WBsoVp3FBrs=s1360-w1360-h1020"
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjHLuEfkIDUAd7WRPa1iOcD1rQg0Xmxq0GeA&s"
   ),
   new Campground(
     "c9",
     "s9",
-    "Fall Creek Falls State Park",
-    20,
-    1982,
+    "Sydney",
+    1298,
+    1788,
     3.9,
-    "https://lh3.googleusercontent.com/p/AF1QipOCc6Y1AUqBnXfuL3LVNNso5wCKCjsSQatGwKeq=s1360-w1360-h1020"
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSooodmoS16no6OCA38hUPl20fX_y2J9VYyOQ&s"
   ),
   new Campground(
     "c10",
     "s10",
-    "Hungry Mother State Park",
-    65,
-    1998,
+    "Tokyo",
+    853,
+    1603,
     4.8,
-    "https://lh3.googleusercontent.com/p/AF1QipOOqLSYYgNwxkCHrEgC6AD76Oppmkup2dUtYC_L=s1360-w1360-h1020"
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQelE1H65RKzMfqkswsQoCuofUC2mdqPQRnpQ&s"
   ),
   new Campground(
     "c11",
@@ -112,7 +112,7 @@ export const CAMPGROUNDS = [
     545,
     1325,
     4.2,
-    "https://lh3.googleusercontent.com/p/AF1QipPaKHoIPvRZtgQFXX-v0JS3elhZOQAEcR4EtB3L=s1360-w1360-h1020"
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCZSleFAL_LhwWVHjxZ0i15fOLZcCHsG-x5g&s"
   ),
   new Campground(
     "c12",
@@ -121,78 +121,78 @@ export const CAMPGROUNDS = [
     350,
     1885,
     4.3,
-    "https://lh3.googleusercontent.com/p/AF1QipOyfO-CtM3qY-_U2Lh_vXeJT-JDWF1Peo60-Jx6=s1360-w1360-h1020"
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkk-sNL6DsXaWu6jLC8IBSI9i38QF_b0IYaA&s"
   ),
   new Campground(
     "c13",
     "s3",
-    "Reed Bingham State Park - Campground",
-    50,
-    1993,
+    "Oxford",
+    600,
+    911,
     4.6,
-    "https://lh3.googleusercontent.com/p/AF1QipOVLpVlPFaMs5PqZkTV1Xp4sag6DeD4a1sETsrg=s1360-w1360-h1020"
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9usp9i-pEgD9G7C-rPr14KyOvaFt0-FX40Q&s"
   ),
   new Campground(
     "c14",
     "s4",
-    "Red River Gorge Campground",
-    30,
-    1981,
+    "Bordeaux",
+    670,
+    300,
     4.0,
-    "https://lh3.googleusercontent.com/p/AF1QipN5RttKwNWNLak8YyI-YK3iJkljMbr6dFAQF3Bk=s1360-w1360-h1020"
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX_6wk3xgTnxbzz3Wk5QwLMGc7rn_3BoAw7A&s"
   ),
   new Campground(
     "c15",
     "s5",
-    "Indian Creek Campground",
-    45,
-    1996,
+    "Barcelona",
+    520,
+    27,
     4.5,
-    "https://lh3.googleusercontent.com/p/AF1QipNy_bOjBzIttqJX-T_sTC6_ezMe4hmE1K1myOwG=s1360-w1360-h1020"
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlMeOPPcrO5F0OMtm5oYFqcYpeNsI5-F_DpQ&s"
   ),
   new Campground(
     "c16",
     "s6",
-    "Piney Grove Campground",
-    55,
-    2005,
+    "Rome",
+    561,
+    753,
     4.7,
-    "https://lh3.googleusercontent.com/p/AF1QipOk70Jg5ROVIeFFkWUcLEI1aWtuQWlz3-sna6dQ=s1360-w1360-h1020"
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVeHN7GQ3TwOKIXCLHZj0zFvLbtbJ-rGTY6Q&s"
   ),
   new Campground(
     "c17",
     "s7",
-    "Frisco Woods Campgrounds Inc",
-    25,
-    1989,
+    "Porto",
+    515,
+    1123,
     3.8,
-    "https://lh3.googleusercontent.com/p/AF1QipPBKwR-aaXqBBJV7jZhu68yyAgi2a2K-teX3K4K=s1360-w1360-h1020"
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKAcOfMc39usiT_q7IzG67rMogb-7eFbxuOw&s"
   ),
   new Campground(
     "c18",
     "s8",
-    "Huntington Beach State Park",
-    60,
-    1999,
+    "aachen",
+    587,
+    814,
     4.9,
-    "https://lh3.googleusercontent.com/p/AF1QipNPOTpDCJCUExeJKRS3AJIivH9awUxSQOExnuja=s1360-w1360-h1020"
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkXzLQSZnmpxRwNDJ6vy8UQQzkibq1aQi_Fw&s"
   ),
   new Campground(
     "c19",
     "s9",
-    "David Crockett State Park",
-    30,
-    1977,
+    "Melbourne",
+    1198,
+    1835,
     3.5,
-    "https://lh3.googleusercontent.com/p/AF1QipN1UpPQNu6nZ7wgTW9WSfWmoGyKSLffNCJ8PhDg=s1360-w1360-h1020"
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ19enemlqYaXuKk6ib4poCCDT_R-DDdQW0Tw&s"
   ),
   new Campground(
     "c20",
     "s10",
-    "Fairy Stone State Park",
-    40,
-    1990,
+    "Kyoto",
+    1922,
+    794,
     4.4,
-    "https://lh3.googleusercontent.com/p/AF1QipMMC9ncqLd5gz6rK6uLVv-AM52frv20rwOi-5eM=s1360-w1360-h1020"
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_ZS0K_0sChcfB_xsyzeVqgS_IpGj4XeUtIA&s"
   ),
 ];
