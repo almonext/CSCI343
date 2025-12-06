@@ -8,7 +8,7 @@ export default function Hotel(props) {
     const HotelItemprops = {
         id: itemData.item.id,
         type: itemData.item.type,
-        stateIds: itemData.item.stateIds,
+        regionIds: itemData.item.regionIds,
         name: itemData.item.name,
         description: itemData.item.description,
         imageUrl: itemData.item.imageUrl,

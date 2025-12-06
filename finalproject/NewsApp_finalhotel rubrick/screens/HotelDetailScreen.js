@@ -7,29 +7,39 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addFavorite, removeFavorite } from '../store/redux/favorites';
 
 export default function HotelDetailScreen(props) {
+    const dispatch = useDispatch();
+
+    const favoriteHotelIds = useSelector((state) => state.favoriteNews.ids);
+
     const HotelId = props.route.params.hotelId;
     const selectedHotel = LISTINGS.find((hotel) => hotel.id === HotelId);
 
-    const [pressed, setPressed] = useState(false);
+    const listingIsFavorite = favoriteHotelIds.includes(HotelId);
 
-    function headerButtonPressHandler() {
-        setPressed(!pressed);
+    function changeFavoriteStatusHandler() {
+    if (listingIsFavorite) {
+      dispatch(removeFavorite({ id: HotelId }));
+    } else {
+      dispatch(addFavorite({ id: HotelId }));
     }
+  }
 
     useLayoutEffect(() => {
         props.navigation.setOptions({
-            title: "Current News",
+            title: "Current Hotel",
             headerRight: () => {
                 return (
-                    <BookmarkButton pressed={pressed} onPress={headerButtonPressHandler} />
+                    <BookmarkButton isFavorite={listingIsFavorite} onPress={changeFavoriteStatusHandler} />
                 );
         
     },
     })
     
 
-}, [props.navigation, headerButtonPressHandler, pressed]);
+}, [props.navigation, changeFavoriteStatusHandler]);
 
+console.log("Selected Hotel:", selectedHotel);
+console.log("Image URL:", selectedHotel?.imageUrl);
   return (
     <View style={styles.rootContainer}>
         <View style={styles.ImageContainer}>
@@ -37,10 +47,7 @@ export default function HotelDetailScreen(props) {
         </View>
 
         <View style={styles.infoContainer}>
-            <Text style={styles.headline}>{selectedHotel.headline}</Text>
-            <Text style={styles.dateAuthorAgency}>
-                {selectedHotel.date} | {selectedHotel.author} | {selectedHotel.agency}
-            </Text>
+            <Text style={styles.headline}>{selectedHotel.name}</Text>
             <Text style={styles.description}>{selectedHotel.description}</Text>
     </View>
     </View>

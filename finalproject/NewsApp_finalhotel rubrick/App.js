@@ -15,13 +15,14 @@ import BookmarksScreen from './screens/BookmarksScreen';
 import USHotelScreen from './screens/USHotelScreen';
 import WorldHotelScreen from './screens/WorldHotelScreen';
 
-
-
 import USGridScreen from './screens/USGridScreen';
 import WorldGridScreen from './screens/WorldGridScreen';
 
+import { Provider } from 'react-redux';
+import { store } from './store/redux/store';
+
 // Keep spalsh visible while fetch resources 
-SplashScreen.preventAutoHideAsync();
+//SplashScreen.preventAutoHideAsync();
 
 //Set the animation options. 
 SplashScreen.setOptions({
@@ -147,6 +148,7 @@ export default function App() {
   return (
     <>
     <StatusBar style='light' />
+    <Provider store={store}>
       <NavigationContainer>
         <Stack.Navigator
         initialRouteName='DrawerScreen'
@@ -190,6 +192,7 @@ export default function App() {
           />
         </Stack.Navigator>
       </NavigationContainer>
+    </Provider>
     </>
   );
 }

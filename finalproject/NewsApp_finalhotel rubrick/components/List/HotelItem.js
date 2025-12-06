@@ -19,10 +19,9 @@ export default function NewsItem(props) {
                     <Image style={styles.image} source={{ uri: props.imageUrl }} />
                 </View>
                 <View style={styles.infoContainer}>
-                    <Text style={styles.headline}>{props.headline}</Text>
-                    <Text style={styles.dateAuthor}>
-                        {props.date} | {props.author}
-                    </Text>
+                    <Text style={styles.headline}>{props.name}</Text>
+                    
+                    
                     <Text style={styles.description}>{props.description}</Text>
 
                 </View>
@@ -42,12 +41,11 @@ const styles = StyleSheet.create({
         paddingHorizontal: 5,
         paddingTop: 5,
         marginBottom: 10,
-        borderRadius: 7
-    },
-    ImageContainer: {
-        height: 300
+        borderRadius: 7,
+        height: 300, // must have height
     },
     image: {
+        width: "100%", // must have width
         height: "100%",
         resizeMode: "cover",
         borderRadius: 7
@@ -61,18 +59,12 @@ const styles = StyleSheet.create({
         fontFamily: "playfairBold",
         paddingBottom: 5
     },
-    dateAuthorAgency: {
-        fontSize: 20,
-        fontFamily: "playfair",
-        paddingBottom: 5
-    },
     description: {
         textAlign: "center",
         width: "100%",
-        fontsize: 15,
-        fontfamily: "playfair",
+        fontSize: 15,
+        fontFamily: "playfair",
         paddingBottom: 5
     }
-
 });
 

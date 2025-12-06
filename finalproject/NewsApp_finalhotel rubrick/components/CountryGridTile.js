@@ -19,7 +19,7 @@ export default function CountryGridTile(props) {
                     props.color,
                     props.color,
                     props.color,
-                    Colors.accent300o75,
+                    Colors.primary300o5,
                 ]}
                 style={styles.innerContainer}
                 >
